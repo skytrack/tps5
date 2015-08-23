@@ -1,0 +1,48 @@
+cd lib/libharu/src/
+
+gcc49 -g -I../include -lz -lpng -march=native -fPIC -c *.c
+ar rcs ../../libharu.a *.o
+
+cd ../../yajl/src/
+
+gcc49 -g -falign-functions=16 -march=native -c -fPIC *.c
+ar rcs ../../yajl.a *.o
+
+cd ../../../
+
+cd ./ak305
+
+g++49  -g -falign-functions=16 -std=c++11 -march=native -DEXPORT -shared -fPIC -o ../../modules/ak305.so *.cpp *.c ../core/jparse.cpp ../lib/yajl.a
+
+cd ../ak306
+g++49  -g -falign-functions=16 -std=c++11 -march=native -DEXPORT -shared -fPIC -o ../../modules/ak306.so *.cpp ../core/jparse.cpp ../lib/yajl.a
+
+cd ../ak308
+g++49  -g -falign-functions=16 -std=c++11 -march=native -DEXPORT -shared -fPIC -o ../../modules/ak308.so *.cpp ../core/jparse.cpp ../lib/yajl.a
+
+cd ../ta001
+g++49  -g -falign-functions=16 -std=c++11 -march=native -DEXPORT -shared -fPIC -o ../../modules/ta001.so *.cpp ../core/jparse.cpp ../lib/yajl.a
+
+cd ../importer
+g++49 -g -std=c++11 -march=native -DEXPORT -shared -fPIC -o ../../modules/importer.so *.cpp ../core/jparse.cpp ../lib/yajl.a
+
+cd ../retranslators/granit_v3
+g++49 -g -std=c++11 -march=native -DEXPORT -shared -fPIC -o ../../../modules/granitv3.so *.cpp ../../core/jparse.cpp ../../lib/yajl.a
+
+cd ../../http
+
+gcc49  -g -march=native -c -fPIC -o sha2.o sha2.c
+gcc49  -g -march=native -c -fPIC -o itoa.o itoa.c
+gcc49  -g -march=native -c -fPIC -o http_parser.o http_parser.c
+gcc49  -g -march=native -c -fPIC -o sqlite3.o ../core/sqlite3.c
+g++49  -g -I../lib/libharu/include -falign-functions=16 -std=c++11 -lz -lpthread -lpng -march=native -DEXPORT -shared -fPIC -o ../../modules/http.so cdcomsearch.so *.cpp ../core/jparse.cpp sha2.o itoa.o http_parser.o sqlite3.o ../lib/yajl.a ../lib/libharu.a
+rm *.o
+
+cd ../fuel
+g++49  -g -std=c++11 -march=native -DEXPORT -shared -fPIC -o ../../modules/fuel.so *.cpp
+
+cd ../core
+gcc49  -g -march=native -c -o sqlite3.o sqlite3.c
+gcc49  -g -march=native -c -fPIC -o sha2.o sha2.c
+g++49  -g -std=c++11 -march=native -fopenmp -lpthread -o ../../bin/tps5 sha2.o sqlite3.o *.cpp ../lib/yajl.a
+rm *.o

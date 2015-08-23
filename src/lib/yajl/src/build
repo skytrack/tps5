@@ -1,0 +1,2 @@
+gcc46 -shared -fPIC -o ../../http/yajl.so *.c
+cp ../../http/yajl.so /usr/local/lib

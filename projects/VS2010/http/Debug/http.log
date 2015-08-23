@@ -1,0 +1,37 @@
+﻿Build started 25.05.2015 12:40:35.
+     1>Project "C:\Projects\tps5\projects\VS2010\http\http.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Projects\tps5\Debug\httpd.dll" /INCREMENTAL /NOLOGO /LIBPATH:C:\Projects\libs\lib libhpdf.lib libpng16.lib zlib.lib yajl.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Projects\tps5\Debug\httpd.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Projects\tps5\lib\httpd.lib" /MACHINE:X86 /PROFILE /DLL Debug\jparse.obj
+         Debug\sqlite3.obj
+         Debug\api.obj
+         Debug\billing.obj
+         Debug\cpu.obj
+         Debug\distance.obj
+         Debug\group.obj
+         Debug\http.obj
+         Debug\http_parser.obj
+         Debug\json_parse.obj
+         Debug\object.obj
+         Debug\online.obj
+         Debug\pdf.obj
+         Debug\response.obj
+         Debug\retranslator.obj
+         Debug\static.obj
+         Debug\device.obj
+         Debug\json.obj
+         Debug\module.obj
+         Debug\rest.obj
+         Debug\sha2.obj
+         Debug\thread_pool.obj
+         Debug\user.obj
+     1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/PROFILE' specification
+     1>jparse.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+            Creating library C:\Projects\tps5\lib\httpd.lib and object C:\Projects\tps5\lib\httpd.exp
+     1>LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+     1>LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+         http.vcxproj -> C:\Projects\tps5\Debug\httpd.dll
+     1>Done Building Project "C:\Projects\tps5\projects\VS2010\http\http.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.93

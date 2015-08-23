@@ -1,0 +1,853 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<config>
+
+ <group>
+  
+  <title>Параметры входов</title>
+  <disableable>no</disableable>
+
+  <parameter>
+   <title>Определение зажигания</title>
+   <tag>ignition method</tag>
+   <id>1</id>
+   <type>numeric</type>
+   <gui>select</gui>
+   <option>
+    <title>Всегда включено</title>
+    <value>0</value>
+   </option>
+   <option>
+    <title>Дискретный вход #1</title>
+    <value>1</value>
+    <default/>
+    <actions>
+     <hide>input1 type</hide>
+     <set><tag>input1 type</tag><value>1</value></set>
+    </actions>
+   </option>
+   <option>
+    <title>Дискретный вход #2</title>
+    <value>2</value>
+    <actions>
+     <hide>input2 type</hide>
+     <set><tag>input2 type</tag><value>1</value></set>
+    </actions>
+   </option>
+   <option>
+    <title>Дискретный вход #3</title>
+    <value>4</value>
+    <actions>
+     <hide>input3 type</hide>
+     <set><tag>input3 type</tag><value>1</value></set>
+    </actions>
+   </option>
+   <option>
+    <title>Дискретный вход #4</title>
+    <value>8</value>
+    <actions>
+     <hide>input4 type</hide>
+     <set><tag>input4 type</tag><value>1</value></set>
+    </actions>
+   </option>
+   <option>
+    <title>Аналоговый вход #1</title>
+    <value>16</value>
+    <actions>
+     <hide>adc1 type</hide>
+     <set><tag>adc1 type</tag><value>1</value></set>
+    </actions>
+   </option>
+   <option>
+    <title>Аналоговый вход #2</title>
+    <value>32</value>
+    <actions>
+     <hide>adc2 type</hide>
+     <set><tag>adc2 type</tag><value>1</value></set>
+    </actions>
+   </option>
+   <option>
+    <title>CAN</title>
+    <value>64</value>
+   </option>
+  </parameter>
+
+  <parameter>
+   <title>Определение запуска двигателя</title>
+   <tag>engine method</tag>
+   <id>2</id>
+   <gui>select</gui>
+   <type>numeric</type>
+   <option>
+    <title>По зажиганию или дискретным входам</title>
+    <value>1</value>
+    <default/>
+   </option>
+   <option>
+    <title>По CAN</title>
+    <value>2</value>
+   </option>
+  </parameter>
+
+  <parameter>
+   <title>Определение движения</title>
+   <tag>move method</tag>
+   <id>3</id>
+   <gui>select</gui>
+   <type>numeric</type>
+   <option>
+    <title>По зажиганию</title>
+    <value>0</value>
+    <actions>
+     <hide>min stop</hide>
+     <hide>move impulse</hide>
+    </actions>
+    <default/>
+   </option>
+   <option>
+    <title>По датчику скорости, вход 1</title>
+    <value>1</value>
+   </option>
+   <option>
+    <title>По датчику скорости, вход 2</title>
+    <value>2</value>
+   </option>
+   <option>
+    <title>По датчику скорости, вход 3</title>
+    <value>3</value>
+   </option>
+   <option>
+    <title>По датчику скорости, вход 4</title>
+    <value>4</value>
+   </option>
+   <option>
+    <title>По CAN</title>
+    <value>5</value>
+    <actions>
+     <hide>min stop</hide>
+     <hide>move impulse</hide>
+    </actions>
+   </option>
+  </parameter>
+
+  <parameter>
+   <title>Минимальная длительность стоянки (сек)</title>
+   <tag>min stop</tag>
+   <id>4</id>
+   <gui>text</gui>
+   <type>numeric</type>
+   <default>30</default>
+  </parameter>
+
+  <parameter>
+   <title>Число импульсов для определения движения</title>
+   <tag>move impulse</tag>
+   <id>5</id>
+   <gui>text</gui>
+   <type>numeric</type>
+   <default>5</default>
+  </parameter>
+
+ </group>
+
+ <group>
+  
+  <title>Активный режим</title>
+  <disableable>no</disableable>
+
+  <parameter>
+   <title>Интервал замера координат</title>
+   <tag>active interval</tag>
+   <id>6</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>15</default>
+   <min>5</min>
+   <max>60</max>
+  </parameter>
+
+  <parameter>
+   <title>Число точек в посылке</title>
+   <tag>active ppp</tag>
+   <id>7</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>4</default>
+   <min>1</min>
+   <max>4</max>
+  </parameter>
+ </group>
+
+ <group>
+  
+  <title>Ждущий режим</title>
+  <disableable>yes</disableable>
+
+  <parameter>
+   <title>Задержка перехода в ждущий режим после выключения зажигания (минуты)</title>
+   <tag>wait delay</tag>
+   <id>8</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>1</default>
+   <disabled>0</disabled>
+   <min>1</min>
+   <max>0</max>
+  </parameter>
+
+  <parameter>
+   <title>Интервал замера координат (минуты)</title>
+   <tag>wait interval</tag>
+   <id>9</id>
+   <type>numeric</type>
+   <gui>numeric</gui>
+   <default>30</default>
+   <min>1</min>
+   <max>1440</max>
+  </parameter>
+
+ </group>
+
+ <group>
+  
+  <title>Спящий режим</title>
+  <disableable>yes</disableable>
+
+  <parameter>
+   <title>Задержка перехода в спящий режим после выключения зажигания (минуты)</title>
+   <tag>sleep delay</tag>
+   <id>10</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>60</default>
+   <disabled>0</disabled>
+   <min>1</min>
+   <max>0</max>
+  </parameter>
+
+  <parameter>
+   <title>Интервал замера координат (часы)</title>
+   <tag>sleep interval</tag>
+   <id>11</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>3</default>
+   <min>1</min>
+   <max>24</max>
+  </parameter>
+
+  <parameter>
+   <title>Максимальное время поиска GPS сигнала (минуты)</title>
+   <tag>sleep gps</tag>
+   <id>12</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>5</default>
+   <min>1</min>
+   <max>0</max>
+  </parameter>
+
+  <parameter>
+   <title>Максимальное время поиска GSM сигнала (минуты)</title>
+   <tag>sleep gsm</tag>
+   <id>13</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>5</default>
+   <min>1</min>
+   <max>0</max>
+  </parameter>
+
+ </group>
+
+ <group>
+  
+  <title>Дискретный вход #1</title>
+  <tag>input1 group</tag>
+  <disableable>yes</disableable>
+
+  <parameter>
+   <title>Подключение</title>
+   <tag>input1 type</tag>
+   <id>14</id>
+   <type>numeric</type>
+   <gui>select</gui>
+   <disabled>0</disabled>
+   <option>
+    <title>Не подключен</title>
+    <id>0</id>
+    <actions>
+     <hide>input1 active interval</hide>
+     <hide>input1 inactive interval</hide>
+     <hide>input1 active sms</hide>
+     <hide>input1 inactive sms</hide>
+     <hide>input1 factor</hide>
+    </actions>      
+   </option>
+   <option>
+    <title>Зажигание</title>
+    <id>1</id>
+    <actions><hide>input1 factor</hide></actions>
+   </option>
+   <option>
+    <title>Сигнал запуска двигателя</title>
+    <id>2</id>
+    <actions><hide>input1 factor</hide></actions>
+   </option>
+   <option>
+    <title>Дискретный датчик</title>
+    <id>3</id>
+    <actions><hide>input1 factor</hide></actions>
+   </option>
+   <option>
+    <title>Импульсный расходомер</title>
+    <id>4</id>
+    <actions>
+     <hide>input1 active interval</hide>
+     <hide>input1 inactive interval</hide>
+     <hide>input1 active sms</hide>
+     <hide>input1 inactive sms</hide>
+    </actions>      
+   </option>
+   <option>
+    <title>Одометр</title>
+    <id>5</id>
+    <actions>
+     <hide>input1 active interval</hide>
+     <hide>input1 inactive interval</hide>
+     <hide>input1 active sms</hide>
+     <hide>input1 inactive sms</hide>
+    </actions>      
+   </option>
+   <option>
+    <title>Тахометр</title>
+    <id>6</id>
+    <actions>
+     <hide>input1 active interval</hide>
+     <hide>input1 inactive interval</hide>
+     <hide>input1 active sms</hide>
+     <hide>input1 inactive sms</hide>
+    </actions>      
+   </option>
+   <option>
+    <title>Форсунка, один импульс ЭДС 50в</title>
+    <id>7</id>
+    <actions>
+     <hide>input1 active interval</hide>
+     <hide>input1 inactive interval</hide>
+     <hide>input1 active sms</hide>
+     <hide>input1 inactive sms</hide>
+    </actions>      
+   </option>
+   <option>
+    <title>Форсунка, два импульса ЭДС 50в</title>
+    <id>8</id>
+    <actions>
+     <hide>input1 active interval</hide>
+     <hide>input1 inactive interval</hide>
+     <hide>input1 active sms</hide>
+     <hide>input1 inactive sms</hide>
+    </actions>      
+   </option>
+   <option>
+    <title>Форсунка, без ЭДС</title>
+    <id>9</id>
+    <actions>
+     <hide>input1 active interval</hide>
+     <hide>input1 inactive interval</hide>
+     <hide>input1 active sms</hide>
+     <hide>input1 inactive sms</hide>
+    </actions>      
+   </option>
+   <option>
+    <title>Тревожная кнопка</title>
+    <id>10</id>
+    <actions><hide>input1 factor</hide></actions>
+   </option>
+   <option>
+    <title>Набор номера</title>
+    <id>13</id>
+    <actions>
+     <hide>input1 active interval</hide>
+     <hide>input1 inactive interval</hide>
+     <hide>input1 active sms</hide>
+     <hide>input1 inactive sms</hide>
+     <hide>input1 factor</hide>
+    </actions>      
+   </option>
+  </parameter>
+
+  <parameter>
+   <title>Минимальная длительность для активации (милисекунды)</title>
+   <tag>input1 active interval</tag>
+   <id>15</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>100</default>
+  </parameter>
+
+  <parameter>
+   <title>Минимальная длительность для деактивации (милисекунды)</title>
+   <tag>input1 inactive interval</tag>
+   <id>16</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>100</default>
+  </parameter>
+
+  <parameter>
+   <title>SMS сообщение при активации</title>
+   <tag>input1 active sms</tag>
+   <id>17</id>
+   <type>text</type>
+   <gui>text</gui>
+   <default></default>
+   <maxlen>32</maxlen>
+  </parameter>
+
+  <parameter>
+   <title>SMS сообщение при деактивации</title>
+   <tag>input1 inactive sms</tag>
+   <id>18</id>
+   <type>text</type>
+   <gui>text</gui>
+   <default></default>
+   <maxlen>32</maxlen>
+  </parameter>
+  
+  <parameter>
+   <title>Коэффициент</title>
+   <tag>input1 factor</tag>
+   <id>54</id>
+   <type>text</type>
+   <gui>text</gui>
+   <default>1</default>
+  </parameter>
+
+ </group>
+
+ <group>
+  
+  <title>Аналоговый вход #1</title>
+  <tag>adc1 group</tag>
+  <disableable>yes</disableable>
+
+  <parameter>
+   <title>Подключение</title>
+   <tag>adc2 type</tag>
+   <id>34</id>
+   <type>numeric</type>
+   <gui>select</gui>
+   <disabled>0</disabled>
+   <option>
+    <title>Не подключен</title>
+    <id>0</id>
+    <actions>
+     <hide>adc1 threshold</hide>
+    </actions>      
+   </option>
+   <option>
+    <title>Аналоговый датчик</title>
+    <id>11</id>
+    <actions>
+     <hide>adc1 threshold</hide>
+    </actions>      
+   </option>
+   <option>
+    <title>Зажигание</title>
+    <id>1</id>
+   </option>
+   <option>
+    <title>Сигнал запуска двигателя</title>
+    <id>2</id>
+   </option>
+   <option>
+    <title>Дискретный датчик</title>
+    <id>3</id>
+   </option>
+   <option>
+    <title>Тревожная кнопка</title>
+    <id>10</id>
+   </option>
+  </parameter>
+
+  <parameter>
+   <title>Порог срабатывания (вольты)</title>
+   <tag>adc1 threshold</tag>
+   <id>35</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>10</default>
+  </parameter>
+
+ </group>
+
+ <group>
+  
+  <title>Аналоговый вход #2</title>
+  <tag>adc2 group</tag>
+  <disableable>yes</disableable>
+
+  <parameter>
+   <title>Подключение</title>
+   <tag>adc2 type</tag>
+   <id>36</id>
+   <type>numeric</type>
+   <gui>select</gui>
+   <disabled>0</disabled>
+   <option>
+    <title>Не подключен</title>
+    <id>0</id>
+    <actions>
+     <hide>adc1 threshold</hide>
+    </actions>      
+   </option>
+   <option>
+    <title>Аналоговый датчик</title>
+    <id>12</id>
+    <actions>
+     <hide>adc1 threshold</hide>
+    </actions>      
+   </option>
+   <option>
+    <title>Зажигание</title>
+    <id>1</id>
+   </option>
+   <option>
+    <title>Сигнал запуска двигателя</title>
+    <id>2</id>
+   </option>
+   <option>
+    <title>Дискретный датчик</title>
+    <id>3</id>
+   </option>
+   <option>
+    <title>Тревожная кнопка</title>
+    <id>10</id>
+   </option>
+   <option>
+    <title>Напряжение питания</title>
+    <id>11</id>
+   </option>
+  </parameter>
+
+  <parameter>
+   <title>Порог срабатывания (вольты)</title>
+   <tag>adc2 threshold</tag>
+   <id>37</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>10</default>
+  </parameter>
+
+ </group>
+
+ <group>
+  
+  <title>Датчик уровня топлива #1</title>
+  <disableable>yes</disableable>
+
+  <parameter>
+   <title>Источник сигнала</title>
+   <tag>fuel sensor1 source</tag>
+   <id>38</id>
+   <type>numeric</type>
+   <gui>select</gui>
+   <disabled>0</disabled>
+   <option>
+    <title>Аналоговый вход 1</title>
+    <id>1</id>
+    <actions>
+     <hide>adc1 group</hide>
+    </actions>
+   </option>
+   <option>
+    <title>Аналоговый вход 2</title>
+    <id>2</id>
+    <actions>
+     <hide>adc2 group</hide>
+    </actions>
+   </option>
+   <option>
+    <title>Частотный вход 3</title>
+    <id>3</id>
+    <actions>
+     <hide>input3 group</hide>
+    </actions>
+   </option>
+   <option>
+    <title>Частотный вход 4</title>
+    <id>4</id>
+    <actions>
+     <hide>input4 group</hide>
+    </actions>
+   </option>
+   <option>
+    <title>RS-232 вход 3</title>
+    <id>5</id>
+    <actions>
+     <hide>input3 group</hide>
+    </actions>
+   </option>
+   <option>
+    <title>RS-232 вход 4</title>
+    <id>6</id>
+    <actions>
+     <hide>input4 group</hide>
+    </actions>
+   </option>
+  </parameter>
+
+  <parameter>
+   <title>Тип питания</title>
+   <tag>fuel sensor1 power type</tag>
+   <id>39</id>
+   <type>numeric</type>
+   <gui>select</gui>
+   <disabled>0</disabled>
+   <option>
+    <title>Постоянное</title>
+    <id>0</id>
+   </option>
+   <option>
+    <title>От зажигания</title>
+    <id>1</id>
+   </option>
+  </parameter>
+
+ </group>
+
+ <group>
+  
+  <title>Датчик уровня топлива #2</title>
+  <disableable>yes</disableable>
+
+  <parameter>
+   <title>Источник сигнала</title>
+   <tag>fuel sensor2 source</tag>
+   <id>40</id>
+   <type>numeric</type>
+   <gui>select</gui>
+   <disabled>0</disabled>
+   <option>
+    <title>Аналоговый вход 1</title>
+    <id>1</id>
+    <actions>
+     <hide>adc1 group</hide>
+    </actions>
+   </option>
+   <option>
+    <title>Аналоговый вход 2</title>
+    <id>2</id>
+    <actions>
+     <hide>adc2 group</hide>
+    </actions>
+   </option>
+   <option>
+    <title>Частотный вход 3</title>
+    <id>3</id>
+    <actions>
+     <hide>input3 group</hide>
+    </actions>
+   </option>
+   <option>
+    <title>Частотный вход 4</title>
+    <id>4</id>
+    <actions>
+     <hide>input4 group</hide>
+    </actions>
+   </option>
+   <option>
+    <title>RS-232 вход 3</title>
+    <id>5</id>
+    <actions>
+     <hide>input3 group</hide>
+    </actions>
+   </option>
+   <option>
+    <title>RS-232 вход 4</title>
+    <id>6</id>
+    <actions>
+     <hide>input4 group</hide>
+    </actions>
+   </option>
+  </parameter>
+
+  <parameter>
+   <title>Тип питания</title>
+   <tag>fuel sensor2 power type</tag>
+   <id>41</id>
+   <type>numeric</type>
+   <gui>select</gui>
+   <disabled>0</disabled>
+   <option>
+    <title>Постоянное</title>
+    <id>0</id>
+   </option>
+   <option>
+    <title>От зажигания</title>
+    <id>1</id>
+   </option>
+  </parameter>
+
+ </group>
+
+ <group>
+  
+  <title>Топливный анализатор</title>
+  <tag>fuel analyzer</tag>
+  <disableable>no</disableable>
+
+  <parameter>
+   <title>Тип фильтра</title>
+   <tag>fuel filter type</tag>
+   <id>42</id>
+   <type>numeric</type>
+   <gui>select</gui>
+   <disabled>0</disabled>
+   <option>
+    <title>Без фильтрации</title>
+    <id>0</id>
+    <actions>
+     <hide>fuel filter len</hide>
+    </actions>
+   </option>
+   <option>
+    <title>Скользящее среднее</title>
+    <id>1</id>
+   </option>
+   <option>
+    <title>Медиана</title>
+    <id>2</id>
+    <default/>
+   </option>
+  </parameter>
+
+  <parameter>
+   <title>Длина буфера сглаживания</title>
+   <tag>fuel filter len</tag>
+   <id>43</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>8</default>
+   <min>3</min>
+   <max>16</max>
+  </parameter>
+
+  <parameter>
+   <title>Порог определения заправки</title>
+   <tag>fuel fill threshold</tag>
+   <id>44</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>20</default>
+   <min>5</min>
+  </parameter>
+
+  <parameter>
+   <title>Порог определения слива</title>
+   <tag>fuel drain threshold</tag>
+   <id>45</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>20</default>
+   <min>5</min>
+  </parameter>
+
+  <parameter>
+   <title>Максимально допустимый расход (литры/час)</title>
+   <tag>fuel max rate</tag>
+   <id>46</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>0</default>
+  </parameter>
+
+ </group>
+
+ <group>
+  
+  <title>Аудио</title>
+  <disableable>no</disableable>
+
+  <parameter>
+   <title>Уровень динамика</title>
+   <tag>audio speaker volume</tag>
+   <id>47</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>70</default>
+   <min>1</min>
+   <max>100</max>
+  </parameter>
+
+  <parameter>
+   <title>Уровень микрофона</title>
+   <tag>audio mic volume</tag>
+   <id>48</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>12</default>
+   <min>1</min>
+   <max>15</max>
+  </parameter>
+
+  <parameter>
+   <title>ES</title>
+   <tag>audio es</tag>
+   <id>49</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>7</default>
+   <min>0</min>
+   <max>7</max>
+  </parameter>
+
+  <parameter>
+   <title>SES</title>
+   <tag>audio ses</tag>
+   <id>50</id>
+   <type>numeric</type>
+   <gui>text</gui>
+   <default>5</default>
+   <min>0</min>
+   <max>5</max>
+  </parameter>
+
+  <parameter>
+   <title>Автоматический ответ</title>
+   <tag>audio auto answer</tag>
+   <id>51</id>
+   <type>numeric</type>
+   <gui>checkbox</gui>
+   <default>1</default>
+  </parameter>
+
+ </group>
+
+ <group>
+  
+  <title>Дополнительные параметры</title>
+  <disableable>no</disableable>
+
+  <parameter>
+   <title>Передавать высоту</title>
+   <tag>additional altitude</tag>
+   <id>52</id>
+   <type>numeric</type>
+   <gui>checkbox</gui>
+   <default>1</default>
+  </parameter>
+
+  <parameter>
+   <title>Передавать путевой угол</title>
+   <tag>additional cog</tag>
+   <id>53</id>
+   <type>numeric</type>
+   <gui>checkbox</gui>
+   <default>1</default>
+  </parameter>
+
+ </group>
+
+</config>

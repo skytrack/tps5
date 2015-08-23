@@ -1,0 +1,15 @@
+.journal-strip .x-grid-row .x-grid-cell { 
+    background-color: #ffffff; 
+} 
+ 
+.journal-strip .x-grid-row-alt .x-grid-cell { 
+    background-color: #DFe8F6; 
+}
+
+.ux-notification-window .x-window-body {
+	text-align: center;
+	padding: 15px 5px 15px 5px;
+}
+.ux-notification-icon-information {
+	background-image: url('/static/images/icon16_info.png');
+}

@@ -1,0 +1,28 @@
+﻿Build started 25.05.2015 12:40:35.
+     1>Project "C:\Projects\tps5\projects\VS2010\ak308\ak308.vcxproj" on node 4 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Projects\tps5\Debug\ak308.dll" /INCREMENTAL /NOLOGO /LIBPATH:C:\Projects\libs\lib yajl.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Projects\tps5\Debug\ak308.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Projects\tps5\Debug\ak308.lib" /MACHINE:X86 /PROFILE /DLL Debug\api.obj
+         Debug\common.obj
+         Debug\config.obj
+         Debug\crc16.obj
+         Debug\data.obj
+         Debug\dirscan.obj
+         Debug\events.obj
+         Debug\json.obj
+         Debug\module.obj
+         Debug\update.obj
+         Debug\jparse.obj
+     1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/PROFILE' specification
+     1>api.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+         data.obj : MSIL .netmodule or module compiled with /GL found; restarting link with /LTCG; add /LTCG to the link command line to improve linker performance
+     1>LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/LTCG' specification
+     1>api.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/OPT:LBR' specification
+            Creating library C:\Projects\tps5\Debug\ak308.lib and object C:\Projects\tps5\Debug\ak308.exp
+         Generating code
+         Finished generating code
+         ak308.vcxproj -> C:\Projects\tps5\Debug\ak308.dll
+     1>Done Building Project "C:\Projects\tps5\projects\VS2010\ak308\ak308.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.82

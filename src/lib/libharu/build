@@ -1,0 +1,3 @@
+cd src
+gcc49 -I/usr/home/tps4/tps5/lib/libharu/include -lz -lpng -march=native -shared -fPIC -o ../../libharu.a *.c
+cd ..

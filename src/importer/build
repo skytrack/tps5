@@ -1,0 +1,1 @@
+g++49 -std=c++11 -march=native -DEXPORT -shared -fPIC -o ../../modules/importer.so /home/tps4/tps5/lib/yajl.so *.cpp ../core/jparse.cpp

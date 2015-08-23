@@ -1,0 +1,18 @@
+﻿Build started 25.05.2015 12:40:36.
+     1>Project "C:\Projects\tps5\projects\VS2010\tr151\tr151.vcxproj" on node 7 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Projects\tps5\Debug\tr151.dll" /INCREMENTAL /NOLOGO /LIBPATH:C:\Projects\libs\lib yajl.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Projects\tps5\Debug\tr151.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Projects\tps5\Debug\tr151.lib" /MACHINE:X86 /DLL Debug\jparse.obj
+         Debug\api.obj
+         Debug\common.obj
+         Debug\config.obj
+         Debug\data.obj
+         Debug\events.obj
+         Debug\json.obj
+         Debug\module.obj
+            Creating library C:\Projects\tps5\Debug\tr151.lib and object C:\Projects\tps5\Debug\tr151.exp
+         tr151.vcxproj -> C:\Projects\tps5\Debug\tr151.dll
+     1>Done Building Project "C:\Projects\tps5\projects\VS2010\tr151\tr151.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.34

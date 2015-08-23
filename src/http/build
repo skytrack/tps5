@@ -1,0 +1,5 @@
+gcc49 -march=native -c -fPIC -o sha2.o sha2.c
+gcc49 -march=native -c -fPIC -o itoa.o itoa.c
+gcc49 -march=native -c -fPIC -o http_parser.o http_parser.c
+g++49 -I/usr/home/tps4/tps5/lib/libharu/include -falign-functions=16 -std=c++11 -lz -lpthread -lpng -march=native -DEXPORT -shared -fPIC -o ../../modules/http.so /home/tps4/tps5/lib/cdcomsearch.so /home/tps4/tps5/lib/yajl.so /home/tps4/tps5/lib/libharu.a *.cpp ../core/jparse.cpp sha2.o itoa.o http_parser.o
+rm *.o
